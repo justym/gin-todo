@@ -13,18 +13,18 @@
         <br>
         <label>Change Status:</label>
         <select name="status">
-            {{if eq .Item.Status "未実行"}}
-                <option value="未実行" selected>未実行</option>
-                <option value="実行中">実行中</option>
-                <option value="終了">終了</option>
-            {{else if eq .Item.Status "実行中"}}
-                <option value="未実行">未実行</option>
-                <option value="実行中" selected>実行中</option>
-                <option value="終了">終了</option>
+            {{if eq .Item.Status "Yet"}}
+                <option value="Yet" selected>Yet</option>
+                <option value="Now">Now</option>
+                <option value="Done">Done</option>
+            {{else if eq .Item.Status "Now"}}
+                <option value="Yet">Yet</option>
+                <option value="Now" selected>Now</option>
+                <option value="Done">Done</option>
             {{else}}
-                <option value="未実行">未実行</option>
-                <option value="実行中">実行中</option>
-                <option value="終了" selected>終了</option>
+                <option value="Yet">Yet</option>
+                <option value="Now">Now</option>
+                <option value="Done" selected>Done</option>
             {{end}}
         </select>
         <br>

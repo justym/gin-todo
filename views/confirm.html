@@ -6,17 +6,17 @@
         <title>Confirm</title>
     </head>
     <body>
-        <h1>削除確認</h1>
-        <p>本当に削除しますか？</p>
+        <h1>Confirm</h1>
+        <p>Do you delete this Item ?</p>
         <ul>
-            <li>内容： {{.Item.Title}}</li>
-            <li>状態： {{.Item.Status}}</li>
-            <li>作成時間： {{.Item.CreatedAt}}</li>
+            <li>Title： {{.Item.Title}}</li>
+            <li>Status： {{.Item.Status}}</li>
+            <li>Created： {{.Item.CreatedAt}}</li>
         </ul>
         
         <form method="post" action="/delete/{{.Item.ID}}">
-            <p><input type="submit" value="削除"></p>
-            <p><a href="/">戻る</a></p>
+            <p><input type="submit" value="Delete"></p>
+            <p><a href="/">home</a></p>
         </form>
     </body>
 </html>
