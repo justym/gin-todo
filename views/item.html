@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo: {{.Item.Title}}</title>
+</head>
+<body>
+    <h2>Title: {{.Item.Title}}</h2>    
+    <form method="post" action="/update/{{.Item.ID}}">
+        <label>Change Title:</label>
+        <input type="text" name="text" size="30" value="{{ .Item.Title}}" > 
+        <br>
+        <label>Change Status:</label>
+        <select name="status">
+            {{if eq .Item.Status "未実行"}}
+                <option value="未実行" selected>未実行</option>
+                <option value="実行中">実行中</option>
+                <option value="終了">終了</option>
+            {{else if eq .Item.Status "実行中"}}
+                <option value="未実行">未実行</option>
+                <option value="実行中" selected>実行中</option>
+                <option value="終了">終了</option>
+            {{else}}
+                <option value="未実行">未実行</option>
+                <option value="実行中">実行中</option>
+                <option value="終了" selected>終了</option>
+            {{end}}
+        </select>
+        <br>
+        <input type="submit" value="Send"></input>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Confirm</title>
+    </head>
+    <body>
+        <h1>削除確認</h1>
+        <p>本当に削除しますか？</p>
+        <ul>
+            <li>内容： {{.Item.Title}}</li>
+            <li>状態： {{.Item.Status}}</li>
+            <li>作成時間： {{.Item.CreatedAt}}</li>
+        </ul>
+        
+        <form method="post" action="/delete/{{.Item.ID}}">
+            <p><input type="submit" value="削除"></p>
+            <p><a href="/">戻る</a></p>
+        </form>
+    </body>
+</html>
